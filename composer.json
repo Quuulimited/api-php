@@ -1,0 +1,39 @@
+{
+    "name": "quuulimited/api-php",
+    "description": "The Quuu Platform API for PHP Clients",
+    "keywords": ["laravel", "api", "quuu", "content", "post"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Peter Day",
+            "email": "peterday.main@gmail.com"
+        },
+        {
+            "name": "Quuu Limited",
+            "email": "hey@quuu.co"
+        }
+    ],
+    "require": {
+        "php": ">=7.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Quuulimited\\Api\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Quuulimited\\Api\\ServiceProvider"
+            ]
+        }
+    },
+    "require-dev": {
+        "laravel/framework": "^7.0"
+    }
+}
