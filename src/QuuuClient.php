@@ -41,9 +41,7 @@ class QuuuClient
 
     
     public function categories(){
-        
         return $this->callGet($this->base.'/content/categories/get');
-
     }
 
     public function content(){
@@ -82,13 +80,16 @@ class QuuuClient
                 }
             }else{
                 if($this->shouldThrowException){
-                    throw new Exception('An invalid response was returned from the Quuu API ('.$http.') ('.$u.')');
+                    throw new Exception('An invalid response was returned from the Quuu API ('.$http.')');
                 }else{
                     return $response;
                 }
             }
+        }else{
+            if(isset($response->data)){
+                $response = $response->data;
+            }
         }
-
 
 
         return $response;
