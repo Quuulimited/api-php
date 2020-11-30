@@ -44,8 +44,8 @@ class QuuuClient
         return $this->callGet($this->base.'/content/categories/get');
     }
 
-    public function content(){
-
+    public function content($options = []){
+        return $this->callGet($this->base.'/content/get?'.http_build_query($options));
     }
 
     private function callGet($u){
