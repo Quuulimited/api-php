@@ -80,7 +80,7 @@ class QuuuClient
                 }
             }else{
                 if($this->shouldThrowException){
-                    throw new Exception('An invalid response was returned from the Quuu API');
+                    throw new Exception('An invalid response was returned from the Quuu API ('.$http.')');
                 }else{
                     return $response;
                 }
