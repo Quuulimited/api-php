@@ -14,7 +14,13 @@ class QuuuClient
 
     private $shouldThrowException;
 
-    public function __construct(stdClass $authentication, stdClass $options){
+    public function __construct($authentication, $options = null){
+        
+        if($options==null){
+            $options = new stdClass;
+        }
+
+
         if(!isset($options->version)){
             $options->version = 'v2'; // default
         }
