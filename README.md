@@ -1,1 +1,3 @@
-# Quuu Api
+# Quuu Api PHP Client
+
+Documentation coming soon!
