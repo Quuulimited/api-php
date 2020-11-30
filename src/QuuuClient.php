@@ -5,7 +5,7 @@ namespace Quuu;
 use stdClass;
 use Exception;
 
-class QuuuClient extends Controller
+class QuuuClient
 {
 
     private $authentication;
