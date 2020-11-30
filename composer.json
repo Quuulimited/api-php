@@ -1,6 +1,7 @@
 {
     "name": "quuulimited/api-php",
     "description": "The Quuu Content API for PHP installations",
+    "version": "1.0.0",
     "keywords": [
         "api",
         "quuu",
