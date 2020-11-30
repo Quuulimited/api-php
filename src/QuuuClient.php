@@ -67,9 +67,11 @@ class QuuuClient
         ),
         ));
 
+        $response = curl_exec($curl);
         $http = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-        $response = json_decode(curl_exec($curl));
         curl_close($curl);
+
+        $response = json_decode($response);
 
         if($http!=200){
             if(isset($response->reason)){
