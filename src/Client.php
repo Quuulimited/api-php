@@ -1,14 +1,20 @@
 <?php
 
-namespace Quuulimited\Api;
+namespace Quuu\Api;
+use stdClass;
+use Exception;
 
-use Illuminate\Http\Request;
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Collection;
-
-class Api extends Controller
+class Client extends Controller
 {
+
+    private $authentication;
+    private $base;
+
+    public function __construct(stdClass $authentication, string $version = 'v2'){
+        $this->base = 'https://api.quuu.co/';
+
+    }
+
 
     protected static $url = null;
     
@@ -43,7 +49,7 @@ class Api extends Controller
             $response = json_decode(json_encode($response)); // force convert to php object
             return $response;
         } else {
-            throw new \Exception('Api dropped call; '.$err);
+            throw new Exception('Api dropped call; '.$err);
         }
     }
 }
