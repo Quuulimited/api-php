@@ -24,7 +24,23 @@ use Quuu\QuuuClient;
 Once installed, you should authenticate to the API as all requests that are made to the Quuu API should be authenticated utilising any key-pairs provided to you by Quuu Ltd.
 
 # Authentication
-More info coming soon...
+Authentication can be achieved by creating a new instance of the `QuuuClient` class. Information may be passed to the constructor as an object like so:
+```
+$client = new QuuuClient((object)[
+    'key' => 'xxxxx-xxxxx-xxxxx-xxxxx-xxxxx', // required
+    'secret' => 'xxxxx-xxxxx-xxxxx-xxxxx-xxxxx', // required if planning to POST data
+]);
+```
+In addition to the authentication object, You may also pass a secondary object as a parameter with extra configuration pairs like so:
+```
+$client = new QuuuClient((object)[
+    'key' => 'xxxxx-xxxxx-xxxxx-xxxxx-xxxxx', // required
+    'secret' => 'xxxxx-xxxxx-xxxxx-xxxxx-xxxxx', // required if planning to POST data
+],(object)[
+    'version' => 'v2', // The API version to use
+    'shouldThrowException' => true // Whether or not to throw an exception if a success:false response is recieved
+]);
+```
 
 # Categories
 More info coming soon...
