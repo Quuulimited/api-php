@@ -40,7 +40,7 @@ class QuuuClient
     }
 
     
-    public function categories($url){
+    public function categories(){
         
         return $this->callGet($this->base.'/content/categories/get');
 
